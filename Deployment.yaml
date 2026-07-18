@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: starlitsun_deployment
+  labels:
+    app: starlitsun
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: starlitsun
+  template:
+    metadata:
+      labels:
+        app: starlitsun
+    spec:
+      containers:
+      - name: starlitsun
+        image: bhavika79/starlitsun_app:v1
+        ports:
+        - containerPort: 5000
