@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: starlitsun_deployment
+  name: starlitsun-deployment
   labels:
     app: starlitsun
 spec:
@@ -16,6 +16,32 @@ spec:
     spec:
       containers:
       - name: starlitsun
-        image: bhavika79/starlitsun_app:v1
+        image: bhavika79/starlitsun_app:v2
         ports:
         - containerPort: 5000
+        env:
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: starlitsun-config
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: starlitsun-config
+              key: DB_PORT
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: starlitsun-config
+              key: DB_NAME
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: starlitsun-secret
+              key: DB_USER
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: starlitsun-secret
+              key: DB_PASSWORD
