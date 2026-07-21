@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Admin Dashboard</title>
+
+@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="container mt-4">
+
+<h1>Admin Dashboard</h1>
+
+<div class="row">
+
+<div class="col">
+<div class="card p-3">
+Products: {{ products }}
+</div>
+</div>
+
+<div class="col">
+<div class="card p-3">
+Customers: {{ customers }}
+</div>
+</div>
+
+<div class="col">
+<div class="card p-3">
+Orders: {{ orders }}
+</div>
+</div>
+
+</div>
+
+<br>
+
+/add-product class="btn btn-primary">
+Add Product
+</a>
+
+/customers="btn btn-success">
+Customers
+</a>
+
+/orders-warning">
+Orders
+</a>
+
+</body>
+</html>

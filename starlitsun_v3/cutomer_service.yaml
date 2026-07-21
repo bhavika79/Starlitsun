@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer-service
+spec:
+  selector:
+    app: customerportal
+  ports:
+  - port: 80
+    targetPort: 5000
+  
+  

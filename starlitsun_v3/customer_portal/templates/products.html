@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Products</title>
+
+3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="container mt-4">
+
+<h1>Products</h1>
+
+/orders class="btn btn-success">
+Orders
+</a>
+
+<table class="table table-bordered mt-3">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Price</th>
+</tr>
+
+{% for p in products %}
+
+<tr>
+<td>{{ p.id }}</td>
+<td>{{ p.name }}</td>
+<td>{{ p.price }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>
