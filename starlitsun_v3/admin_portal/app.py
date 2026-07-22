@@ -113,7 +113,30 @@ def orders():
         "orders.html",
         orders=orders
     )
+@app.route("/inventory-reports")
+def inventory_reports():
 
+    conn = get_connection()
+
+    cursor = conn.cursor(dictionary=True)
+
+    cursor.execute(
+        """
+        SELECT *
+        FROM inventory_reports
+        ORDER BY generated_at DESC
+        """
+    )
+
+    reports = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+
+    return render_template(
+        "inventory_reports.html",
+        reports=reports
+    )
 
 if __name__ == "__main__":
     app.run(

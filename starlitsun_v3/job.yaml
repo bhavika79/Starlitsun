@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+
+metadata:
+  name: bulk-product-import
+
+spec:
+
+  template:
+
+    metadata:
+      labels:
+        app: bulk-product-import
+
+    spec:
+
+      containers:
+
+      - name: importer
+
+        image: bhavika79/bulk-import:v1
+
+        envFrom:
+
+        - configMapRef:
+            name: app-config
+
+        - secretRef:
+            name: mysql-secret
+
+      restartPolicy: Never
+
+  backoffLimit: 2

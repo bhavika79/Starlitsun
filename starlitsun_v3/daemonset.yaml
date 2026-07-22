@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: DaemonSet
+
+metadata:
+  name: monitor-agent
+
+spec:
+
+  selector:
+    matchLabels:
+      app: monitor-agent
+
+  template:
+
+    metadata:
+      labels:
+        app: monitor-agent
+
+    spec:
+
+      containers:
+
+      - name: monitor
+
+        image: bhavika79/monitor-agent:v1

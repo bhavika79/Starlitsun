@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: CronJob
+
+metadata:
+  name: inventory-sync
+
+spec:
+
+  schedule: "*/2 * * * *"
+
+  jobTemplate:
+
+    spec:
+
+      template:
+
+        spec:
+
+          containers:
+
+          - name: inventory-sync
+
+            image: bhavika79/inventory-sync:v1
+
+            envFrom:
+
+            - configMapRef:
+                name: app-config
+
+            - secretRef:
+                name: mysql-secret
+
+          restartPolicy: Never

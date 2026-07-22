@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Inventory Reports</title>
+.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+</head>
+
+<body class="container mt-4">
+
+<h2>Inventory Reports</h2>
+
+<table class="table table-bordered">
+
+<tr>
+<th>ID</th>
+<th>Generated At</th>
+<th>Total</th>
+<th>Craft</th>
+<th>Art</th>
+</tr>
+
+{% for report in reports %}
+
+<tr>
+
+<td>{{ report.id }}</td>
+
+<td>{{ report.generated_at }}</td>
+
+<td>{{ report.total_products }}</td>
+
+<td>{{ report.craft_products }}</td>
+
+<td>{{ report.art_products }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html>

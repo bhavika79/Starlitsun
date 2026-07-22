@@ -65,7 +65,54 @@ def orders():
         "orders.html",
         orders=orders
     )
+@app.route("/crafts")
+def crafts():
 
+    conn = get_connection()
+
+    cursor = conn.cursor(dictionary=True)
+
+    cursor.execute(
+        """
+        SELECT *
+        FROM products
+        WHERE category='Craft'
+        """
+    )
+
+    products = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+
+    return render_template(
+        "products.html",
+        products=products
+    )
+@app.route("/arts")
+def arts():
+
+    conn = get_connection()
+
+    cursor = conn.cursor(dictionary=True)
+
+    cursor.execute(
+        """
+        SELECT *
+        FROM products
+        WHERE category='Art'
+        """
+    )
+
+    products = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+
+    return render_template(
+        "products.html",
+        products=products
+    )
 
 if __name__ == "__main__":
     app.run(
