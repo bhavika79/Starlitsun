@@ -18,7 +18,7 @@ spec:
 
       - name: importer
 
-        image: bhavika79/starlitsun-bulkimportworker
+        image: bhavika79/starlitsun-bulkimportworker:v4
 
         envFrom:
 
