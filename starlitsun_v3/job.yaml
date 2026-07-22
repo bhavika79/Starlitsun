@@ -18,15 +18,15 @@ spec:
 
       - name: importer
 
-        image: bhavika79/bulk-import:v1
+        image: bhavika79/starlitsun-bulkimportworker
 
         envFrom:
 
         - configMapRef:
-            name: app-config
+            name: starlitsun-config
 
         - secretRef:
-            name: mysql-secret
+            name: starlitsun-secret
 
       restartPolicy: Never
 

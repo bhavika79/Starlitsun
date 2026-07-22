@@ -20,14 +20,14 @@ spec:
 
           - name: inventory-sync
 
-            image: bhavika79/inventory-sync:v1
+            image: bhavika79/starlitsun-inventorysync:v4
 
             envFrom:
 
             - configMapRef:
-                name: app-config
+                name: starlitsun-config
 
             - secretRef:
-                name: mysql-secret
+                name: starlitsun-secret
 
           restartPolicy: Never

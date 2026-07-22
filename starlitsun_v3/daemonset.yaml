@@ -22,4 +22,4 @@ spec:
 
       - name: monitor
 
-        image: bhavika79/monitor-agent:v1
+        image: bhavika79/starlitsun-monitoring:v4
