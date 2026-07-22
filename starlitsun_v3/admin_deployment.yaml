@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: adminportal
-          image: bhavika79/starlitsun_adminportal:v3
+          image: bhavika79/starlitsun_adminportal:v4
           ports:
             - containerPort: 5000
           env:

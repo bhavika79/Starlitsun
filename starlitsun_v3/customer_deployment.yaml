@@ -16,7 +16,7 @@ spec:
     spec: 
       containers:
         - name: customerportal
-          image: bhavika79/starlitsun_app:v3
+          image: bhavika79/starlitsun_app:v4
           ports:
             - containerPort: 5000
           env:
